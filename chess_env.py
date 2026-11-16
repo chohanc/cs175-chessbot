@@ -15,6 +15,9 @@ class ChessEnv:
     def get_state(self):
         return self.board.fen()
 
+    def show_board(self):
+        return self.board
+
     # Return all legal moves as UCI strings
     def get_legal_moves(self):
         if self.is_game_over():
