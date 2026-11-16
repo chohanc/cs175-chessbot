@@ -82,6 +82,112 @@ class QNetwork(nn.Module):
         return self.layers(states)
 
 class SelfLearningPlayer:
-    def __init__(self):
-        return
+    def __init__(self, gamma=0.99, lr=1e-4, epsilon=1.0,
+                 epsilon_min=0.05, epsilon_decay=0.995,
+                 batch_size=32, memory_size=50_000, warmup=256,
+                 target_update_every=250, device=None):
+        self.device = torch.device(
+            device or ("cuda" if torch.cuda.is_available() else "cpu")
+        )
+        self.model = QNetwork().to(self.device)
+        self.target_model = QNetwork().to(self.device)
+        self.target_model.load_state_dict(self.model.state_dict())
+        self.target_model.eval()
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=lr)
+        self.loss_fn = nn.MSELoss()  # (Q(s,a) - target)^2 from the proposal
 
+        self.gamma = gamma
+        self.epsilon = epsilon
+        self.epsilon_min = epsilon_min
+        self.epsilon_decay = epsilon_decay
+        self.batch_size = batch_size
+        self.warmup = warmup
+        self.target_update_every = target_update_every
+        self.memory = deque(maxlen=memory_size)
+        self.training_steps = 0
+
+    def select_move(self, state, legal_moves, training=True):
+        """Select a legal UCI move; exploration occurs only in training mode."""
+        if not legal_moves:
+            raise ValueError("No legal moves are available")
+
+        if training and random.random() < self.epsilon:
+            return random.choice(legal_moves)
+
+        with torch.no_grad():
+            x = encode_board(state).unsqueeze(0).to(self.device)
+            q_values = self.model(x)[0]
+            ids = [move_to_id(move) for move in legal_moves]
+            best_position = q_values[ids].argmax().item()
+            return legal_moves[best_position]
+
+    def remember(self, state, action, reward, next_state, done):
+        """Replay entry: (state, action, reward, next_state, done)."""
+        self.memory.append((state, action, float(reward), next_state, bool(done)))
+
+    def train_step(self):
+        """Learn from one random replay batch; returns loss or None if warming up."""
+        if len(self.memory) < max(self.batch_size, self.warmup):
+            return None
+
+        batch = random.sample(self.memory, self.batch_size)
+        states = torch.stack([encode_board(t[0]) for t in batch]).to(self.device)
+        action_ids = torch.tensor(
+            [move_to_id(t[1]) for t in batch],
+            dtype=torch.long, device=self.device
+        ).unsqueeze(1)
+        rewards = torch.tensor(
+            [t[2] for t in batch], dtype=torch.float32, device=self.device
+        )
+        next_states = torch.stack([encode_board(t[3]) for t in batch]).to(self.device)
+
+        # Predicted value of each action actually played.
+        q_pred = self.model(states).gather(1, action_ids).squeeze(1)
+
+        with torch.no_grad():
+            next_q_all = self.target_model(next_states)
+            opponent_best = torch.zeros(self.batch_size, device=self.device)
+
+            for i, (_, _, _, next_fen, done) in enumerate(batch):
+                if done:
+                    continue  # Terminal target is simply reward.
+                board = chess.Board(next_fen)
+                legal_ids = [move_to_id(m.uci()) for m in board.legal_moves]
+                if legal_ids:
+                    opponent_best[i] = next_q_all[i, legal_ids].max()
+
+            # Zero-sum turn alternation: next Q-value belongs to the opponent.
+            targets = rewards - self.gamma * opponent_best
+
+        loss = self.loss_fn(q_pred, targets)
+        self.optimizer.zero_grad()
+        loss.backward()
+        nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
+        self.optimizer.step()
+
+        self.training_steps += 1
+        if self.training_steps % self.target_update_every == 0:
+            self.target_model.load_state_dict(self.model.state_dict())
+
+        return float(loss.item())
+
+    def finish_episode(self):
+        """Reduce randomness slowly after each self-play game."""
+        self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
+
+    def save(self, path="chess_dqn.pt"):
+        torch.save({
+            "model": self.model.state_dict(),
+            "optimizer": self.optimizer.state_dict(),
+            "epsilon": self.epsilon,
+            "training_steps": self.training_steps,
+        }, path)
+
+    def load(self, path="chess_dqn.pt"):
+        # Load only files you trust. The checkpoint should be one you saved.
+        checkpoint = torch.load(path, map_location=self.device, weights_only=True)
+        self.model.load_state_dict(checkpoint["model"])
+        self.target_model.load_state_dict(self.model.state_dict())
+        self.optimizer.load_state_dict(checkpoint["optimizer"])
+        self.epsilon = checkpoint["epsilon"]
+        self.training_steps = checkpoint["training_steps"]
