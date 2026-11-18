@@ -50,12 +50,8 @@ def main(player1, player2):
         
 
     print("Game result:", game_result["winner"])
+    print("termination:", game_result["termination"])
     print("moves_made:", game_result["move_history"])
-    print(len(game_result["move_history"]) == game_result["num_plies"])
-
-    print(len(game_result["board_history"]) == game_result["num_plies"] + 1)
-    print(env.get_result())
-    print(env.get_termination())
     return game_result
 
 
