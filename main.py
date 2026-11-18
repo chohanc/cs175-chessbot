@@ -1,56 +1,70 @@
 from chess_env import ChessEnv
 from player_random import RandomPlayer
+from player_stockfish import StockfishPlayer
 from player import SelfLearningPlayer
+import time
 
-def main():
+def main(player1, player2):
     env = ChessEnv()
-
-    white_player = RandomPlayer()
-    black_player = RandomPlayer()
+    white_player = player1
+    black_player = player2
 
     state = env.reset()
+    # collects all info for a single game
+    game_result = {
+        "white_player": white_player.name,
+        "black_player": black_player.name,
+        "winner": None,
+        "termination": None,
+        "num_plies": 0,
+        "move_history": [],
+        "board_history": []
+    }
+    # adds initial board position
+    game_result["board_history"].append(env.get_fen())
+    start_time = time.time()
+    done = False
+    while not done:
+        turn = env.get_turn()
+        if turn == "white":
+            player = white_player
+        else:
+            player = black_player
 
-    # "w" overwrites the previous game
-    with open("latest_game.txt", "w", encoding="utf-8") as file:
+        action = player.select_move(
+            state,
+            env.get_legal_moves()
+        )
 
-        file.write("=== NEW CHESS GAME ===\n\n")
+        state, reward, done = env.step(action)
 
-        move_number = 0
+        game_result["num_plies"] += 1
+        game_result["move_history"].append({"player": turn,
+                                            "move": action})
+        game_result["board_history"].append(env.get_fen())
 
-        while not env.is_game_over():
-            if env.get_turn() == "white":
-                player = white_player
-            else:
-                player = black_player
 
-            action = player.select_move(
-                state,
-                env.get_legal_moves()
-            )
+    game_result["duration"] = time.time() - start_time
+    game_result["winner"]= env.get_result()
+    game_result["termination"] = env.get_termination()
+        
 
-            state, reward, done = env.step(action)
+    print("Game result:", game_result["winner"])
+    print("moves_made:", game_result["move_history"])
+    print(len(game_result["move_history"]) == game_result["num_plies"])
 
-            move_number += 1
-
-            # Record the move
-            file.write(f"Move {move_number}: {action}\n")
-
-            # Get the current board state
-            board_state = str(env.show_board())
-
-            file.write(board_state + "\n\n")
-
-            print(f"Move {move_number}: {action}")
-            print()
-
-        result = env.get_result()
-
-        file.write(f"Game result: {result}\n")
-
-    print("Game result:", result)
-    print("Game saved to latest_game.txt")
+    print(len(game_result["board_history"]) == game_result["num_plies"] + 1)
+    print(env.get_result())
+    print(env.get_termination())
+    return game_result
 
 
 
 if __name__ == "__main__":
-    main()
+    player1 = RandomPlayer()
+    player2 = StockfishPlayer("/opt/homebrew/bin/stockfish")
+
+    try:
+        main(player1, player2)
+    finally:
+        player2.close()

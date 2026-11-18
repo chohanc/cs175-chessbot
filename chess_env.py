@@ -29,6 +29,10 @@ class ChessEnv:
     def get_turn(self):
         return "white" if self.board.turn == chess.WHITE else "black"
 
+    # Return board position in FEN notation
+    def get_fen(self):
+        return self.board.fen()
+    
     # Check whether the game has ended
     def is_game_over(self):
         return self.board.is_game_over(claim_draw=True)
@@ -37,6 +41,12 @@ class ChessEnv:
     def get_result(self):
         return self.board.result(claim_draw=True)
 
+    def get_termination(self):
+        outcome = self.board.outcome()
+        if outcome is None:
+            return None
+        return outcome.termination.name.lower()
+    
     # Return the winner, or None if drawn or ongoing
     def get_winner(self):
         outcome = self.board.outcome(claim_draw=True)

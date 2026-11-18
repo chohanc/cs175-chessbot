@@ -1,0 +1,1673 @@
+=== NEW CHESS GAME ===
+
+Move 1: h2h4
+r n b q k b n r
+p p p p p p p p
+. . . . . . . .
+. . . . . . . .
+. . . . . . . P
+. . . . . . . .
+P P P P P P P .
+R N B Q K B N R
+
+Move 2: b8c6
+r . b q k b n r
+p p p p p p p p
+. . n . . . . .
+. . . . . . . .
+. . . . . . . P
+. . . . . . . .
+P P P P P P P .
+R N B Q K B N R
+
+Move 3: e2e3
+r . b q k b n r
+p p p p p p p p
+. . n . . . . .
+. . . . . . . .
+. . . . . . . P
+. . . . P . . .
+P P P P . P P .
+R N B Q K B N R
+
+Move 4: g8h6
+r . b q k b . r
+p p p p p p p p
+. . n . . . . n
+. . . . . . . .
+. . . . . . . P
+. . . . P . . .
+P P P P . P P .
+R N B Q K B N R
+
+Move 5: f2f3
+r . b q k b . r
+p p p p p p p p
+. . n . . . . n
+. . . . . . . .
+. . . . . . . P
+. . . . P P . .
+P P P P . . P .
+R N B Q K B N R
+
+Move 6: a7a5
+r . b q k b . r
+. p p p p p p p
+. . n . . . . n
+p . . . . . . .
+. . . . . . . P
+. . . . P P . .
+P P P P . . P .
+R N B Q K B N R
+
+Move 7: b2b3
+r . b q k b . r
+. p p p p p p p
+. . n . . . . n
+p . . . . . . .
+. . . . . . . P
+. P . . P P . .
+P . P P . . P .
+R N B Q K B N R
+
+Move 8: c6a7
+r . b q k b . r
+n p p p p p p p
+. . . . . . . n
+p . . . . . . .
+. . . . . . . P
+. P . . P P . .
+P . P P . . P .
+R N B Q K B N R
+
+Move 9: d1e2
+r . b q k b . r
+n p p p p p p p
+. . . . . . . n
+p . . . . . . .
+. . . . . . . P
+. P . . P P . .
+P . P P Q . P .
+R N B . K B N R
+
+Move 10: a7b5
+r . b q k b . r
+. p p p p p p p
+. . . . . . . n
+p n . . . . . .
+. . . . . . . P
+. P . . P P . .
+P . P P Q . P .
+R N B . K B N R
+
+Move 11: e2b5
+r . b q k b . r
+. p p p p p p p
+. . . . . . . n
+p Q . . . . . .
+. . . . . . . P
+. P . . P P . .
+P . P P . . P .
+R N B . K B N R
+
+Move 12: f7f5
+r . b q k b . r
+. p p p p . p p
+. . . . . . . n
+p Q . . . p . .
+. . . . . . . P
+. P . . P P . .
+P . P P . . P .
+R N B . K B N R
+
+Move 13: c2c4
+r . b q k b . r
+. p p p p . p p
+. . . . . . . n
+p Q . . . p . .
+. . P . . . . P
+. P . . P P . .
+P . . P . . P .
+R N B . K B N R
+
+Move 14: g7g6
+r . b q k b . r
+. p p p p . . p
+. . . . . . p n
+p Q . . . p . .
+. . P . . . . P
+. P . . P P . .
+P . . P . . P .
+R N B . K B N R
+
+Move 15: f3f4
+r . b q k b . r
+. p p p p . . p
+. . . . . . p n
+p Q . . . p . .
+. . P . . P . P
+. P . . P . . .
+P . . P . . P .
+R N B . K B N R
+
+Move 16: h8g8
+r . b q k b r .
+. p p p p . . p
+. . . . . . p n
+p Q . . . p . .
+. . P . . P . P
+. P . . P . . .
+P . . P . . P .
+R N B . K B N R
+
+Move 17: g1e2
+r . b q k b r .
+. p p p p . . p
+. . . . . . p n
+p Q . . . p . .
+. . P . . P . P
+. P . . P . . .
+P . . P N . P .
+R N B . K B . R
+
+Move 18: e7e5
+r . b q k b r .
+. p p p . . . p
+. . . . . . p n
+p Q . . p p . .
+. . P . . P . P
+. P . . P . . .
+P . . P N . P .
+R N B . K B . R
+
+Move 19: g2g4
+r . b q k b r .
+. p p p . . . p
+. . . . . . p n
+p Q . . p p . .
+. . P . . P P P
+. P . . P . . .
+P . . P N . . .
+R N B . K B . R
+
+Move 20: h6f7
+r . b q k b r .
+. p p p . n . p
+. . . . . . p .
+p Q . . p p . .
+. . P . . P P P
+. P . . P . . .
+P . . P N . . .
+R N B . K B . R
+
+Move 21: f4e5
+r . b q k b r .
+. p p p . n . p
+. . . . . . p .
+p Q . . P p . .
+. . P . . . P P
+. P . . P . . .
+P . . P N . . .
+R N B . K B . R
+
+Move 22: f8h6
+r . b q k . r .
+. p p p . n . p
+. . . . . . p b
+p Q . . P p . .
+. . P . . . P P
+. P . . P . . .
+P . . P N . . .
+R N B . K B . R
+
+Move 23: h1g1
+r . b q k . r .
+. p p p . n . p
+. . . . . . p b
+p Q . . P p . .
+. . P . . . P P
+. P . . P . . .
+P . . P N . . .
+R N B . K B R .
+
+Move 24: f7g5
+r . b q k . r .
+. p p p . . . p
+. . . . . . p b
+p Q . . P p n .
+. . P . . . P P
+. P . . P . . .
+P . . P N . . .
+R N B . K B R .
+
+Move 25: f1g2
+r . b q k . r .
+. p p p . . . p
+. . . . . . p b
+p Q . . P p n .
+. . P . . . P P
+. P . . P . . .
+P . . P N . B .
+R N B . K . R .
+
+Move 26: g5f7
+r . b q k . r .
+. p p p . n . p
+. . . . . . p b
+p Q . . P p . .
+. . P . . . P P
+. P . . P . . .
+P . . P N . B .
+R N B . K . R .
+
+Move 27: c1a3
+r . b q k . r .
+. p p p . n . p
+. . . . . . p b
+p Q . . P p . .
+. . P . . . P P
+B P . . P . . .
+P . . P N . B .
+R N . . K . R .
+
+Move 28: b7b6
+r . b q k . r .
+. . p p . n . p
+. p . . . . p b
+p Q . . P p . .
+. . P . . . P P
+B P . . P . . .
+P . . P N . B .
+R N . . K . R .
+
+Move 29: b5a4
+r . b q k . r .
+. . p p . n . p
+. p . . . . p b
+p . . . P p . .
+Q . P . . . P P
+B P . . P . . .
+P . . P N . B .
+R N . . K . R .
+
+Move 30: f5f4
+r . b q k . r .
+. . p p . n . p
+. p . . . . p b
+p . . . P . . .
+Q . P . . p P P
+B P . . P . . .
+P . . P N . B .
+R N . . K . R .
+
+Move 31: e1f1
+r . b q k . r .
+. . p p . n . p
+. p . . . . p b
+p . . . P . . .
+Q . P . . p P P
+B P . . P . . .
+P . . P N . B .
+R N . . . K R .
+
+Move 32: a8b8
+. r b q k . r .
+. . p p . n . p
+. p . . . . p b
+p . . . P . . .
+Q . P . . p P P
+B P . . P . . .
+P . . P N . B .
+R N . . . K R .
+
+Move 33: a4b5
+. r b q k . r .
+. . p p . n . p
+. p . . . . p b
+p Q . . P . . .
+. . P . . p P P
+B P . . P . . .
+P . . P N . B .
+R N . . . K R .
+
+Move 34: f4e3
+. r b q k . r .
+. . p p . n . p
+. p . . . . p b
+p Q . . P . . .
+. . P . . . P P
+B P . . p . . .
+P . . P N . B .
+R N . . . K R .
+
+Move 35: e2c1
+. r b q k . r .
+. . p p . n . p
+. p . . . . p b
+p Q . . P . . .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 36: d8g5
+. r b . k . r .
+. . p p . n . p
+. p . . . . p b
+p Q . . P . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 37: b5d7
+. r b . k . r .
+. . p Q . n . p
+. p . . . . p b
+p . . . P . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 38: c8d7
+. r . . k . r .
+. . p b . n . p
+. p . . . . p b
+p . . . P . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 39: a3b4
+. r . . k . r .
+. . p b . n . p
+. p . . . . p b
+p . . . P . q .
+. B P . . . P P
+. P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 40: b8d8
+. . . r k . r .
+. . p b . n . p
+. p . . . . p b
+p . . . P . q .
+. B P . . . P P
+. P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 41: b4a3
+. . . r k . r .
+. . p b . n . p
+. p . . . . p b
+p . . . P . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 42: f7e5
+. . . r k . r .
+. . p b . . . p
+. p . . . . p b
+p . . . n . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R N N . . K R .
+
+Move 43: b1c3
+. . . r k . r .
+. . p b . . . p
+. p . . . . p b
+p . . . n . q .
+. . P . . . P P
+B P N . p . . .
+P . . P . . B .
+R . N . . K R .
+
+Move 44: e5f7
+. . . r k . r .
+. . p b . n . p
+. p . . . . p b
+p . . . . . q .
+. . P . . . P P
+B P N . p . . .
+P . . P . . B .
+R . N . . K R .
+
+Move 45: c3d5
+. . . r k . r .
+. . p b . n . p
+. p . . . . p b
+p . . N . . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R . N . . K R .
+
+Move 46: f7e5
+. . . r k . r .
+. . p b . . . p
+. p . . . . p b
+p . . N n . q .
+. . P . . . P P
+B P . . p . . .
+P . . P . . B .
+R . N . . K R .
+
+Move 47: a3f8
+. . . r k B r .
+. . p b . . . p
+. p . . . . p b
+p . . N n . q .
+. . P . . . P P
+. P . . p . . .
+P . . P . . B .
+R . N . . K R .
+
+Move 48: e5d3
+. . . r k B r .
+. . p b . . . p
+. p . . . . p b
+p . . N . . q .
+. . P . . . P P
+. P . n p . . .
+P . . P . . B .
+R . N . . K R .
+
+Move 49: a1b1
+. . . r k B r .
+. . p b . . . p
+. p . . . . p b
+p . . N . . q .
+. . P . . . P P
+. P . n p . . .
+P . . P . . B .
+. R N . . K R .
+
+Move 50: e3d2
+. . . r k B r .
+. . p b . . . p
+. p . . . . p b
+p . . N . . q .
+. . P . . . P P
+. P . n . . . .
+P . . p . . B .
+. R N . . K R .
+
+Move 51: h4g5
+. . . r k B r .
+. . p b . . . p
+. p . . . . p b
+p . . N . . P .
+. . P . . . P .
+. P . n . . . .
+P . . p . . B .
+. R N . . K R .
+
+Move 52: d7e6
+. . . r k B r .
+. . p . . . . p
+. p . . b . p b
+p . . N . . P .
+. . P . . . P .
+. P . n . . . .
+P . . p . . B .
+. R N . . K R .
+
+Move 53: f8b4
+. . . r k . r .
+. . p . . . . p
+. p . . b . p b
+p . . N . . P .
+. B P . . . P .
+. P . n . . . .
+P . . p . . B .
+. R N . . K R .
+
+Move 54: e6f5
+. . . r k . r .
+. . p . . . . p
+. p . . . . p b
+p . . N . b P .
+. B P . . . P .
+. P . n . . . .
+P . . p . . B .
+. R N . . K R .
+
+Move 55: d5b6
+. . . r k . r .
+. . p . . . . p
+. N . . . . p b
+p . . . . b P .
+. B P . . . P .
+. P . n . . . .
+P . . p . . B .
+. R N . . K R .
+
+Move 56: d3b2
+. . . r k . r .
+. . p . . . . p
+. N . . . . p b
+p . . . . b P .
+. B P . . . P .
+. P . . . . . .
+P n . p . . B .
+. R N . . K R .
+
+Move 57: c4c5
+. . . r k . r .
+. . p . . . . p
+. N . . . . p b
+p . P . . b P .
+. B . . . . P .
+. P . . . . . .
+P n . p . . B .
+. R N . . K R .
+
+Move 58: d2c1b
+. . . r k . r .
+. . p . . . . p
+. N . . . . p b
+p . P . . b P .
+. B . . . . P .
+. P . . . . . .
+P n . . . . B .
+. R b . . K R .
+
+Move 59: b6a8
+N . . r k . r .
+. . p . . . . p
+. . . . . . p b
+p . P . . b P .
+. B . . . . P .
+. P . . . . . .
+P n . . . . B .
+. R b . . K R .
+
+Move 60: g8g7
+N . . r k . . .
+. . p . . . r p
+. . . . . . p b
+p . P . . b P .
+. B . . . . P .
+. P . . . . . .
+P n . . . . B .
+. R b . . K R .
+
+Move 61: a2a3
+N . . r k . . .
+. . p . . . r p
+. . . . . . p b
+p . P . . b P .
+. B . . . . P .
+P P . . . . . .
+. n . . . . B .
+. R b . . K R .
+
+Move 62: g7e7
+N . . r k . . .
+. . p . r . . p
+. . . . . . p b
+p . P . . b P .
+. B . . . . P .
+P P . . . . . .
+. n . . . . B .
+. R b . . K R .
+
+Move 63: b4a5
+N . . r k . . .
+. . p . r . . p
+. . . . . . p b
+B . P . . b P .
+. . . . . . P .
+P P . . . . . .
+. n . . . . B .
+. R b . . K R .
+
+Move 64: e7e2
+N . . r k . . .
+. . p . . . . p
+. . . . . . p b
+B . P . . b P .
+. . . . . . P .
+P P . . . . . .
+. n . . r . B .
+. R b . . K R .
+
+Move 65: g2h3
+N . . r k . . .
+. . p . . . . p
+. . . . . . p b
+B . P . . b P .
+. . . . . . P .
+P P . . . . . B
+. n . . r . . .
+. R b . . K R .
+
+Move 66: f5d7
+N . . r k . . .
+. . p b . . . p
+. . . . . . p b
+B . P . . . P .
+. . . . . . P .
+P P . . . . . B
+. n . . r . . .
+. R b . . K R .
+
+Move 67: a8c7
+. . . r k . . .
+. . N b . . . p
+. . . . . . p b
+B . P . . . P .
+. . . . . . P .
+P P . . . . . B
+. n . . r . . .
+. R b . . K R .
+
+Move 68: e8f8
+. . . r . k . .
+. . N b . . . p
+. . . . . . p b
+B . P . . . P .
+. . . . . . P .
+P P . . . . . B
+. n . . r . . .
+. R b . . K R .
+
+Move 69: b3b4
+. . . r . k . .
+. . N b . . . p
+. . . . . . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. n . . r . . .
+. R b . . K R .
+
+Move 70: e2e6
+. . . r . k . .
+. . N b . . . p
+. . . . r . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. n . . . . . .
+. R b . . K R .
+
+Move 71: g1g2
+. . . r . k . .
+. . N b . . . p
+. . . . r . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. n . . . . R .
+. R b . . K . .
+
+Move 72: d8e8
+. . . . r k . .
+. . N b . . . p
+. . . . r . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. n . . . . R .
+. R b . . K . .
+
+Move 73: c7a6
+. . . . r k . .
+. . . b . . . p
+N . . . r . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. n . . . . R .
+. R b . . K . .
+
+Move 74: b2d1
+. . . . r k . .
+. . . b . . . p
+N . . . r . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . K . .
+
+Move 75: a6b8
+. N . . r k . .
+. . . b . . . p
+. . . . r . p b
+B . P . . . P .
+. P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . K . .
+
+Move 76: d7a4
+. N . . r k . .
+. . . . . . . p
+. . . . r . p b
+B . P . . . P .
+b P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . K . .
+
+Move 77: g5h6
+. N . . r k . .
+. . . . . . . p
+. . . . r . p P
+B . P . . . . .
+b P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . K . .
+
+Move 78: a4b5
+. N . . r k . .
+. . . . . . . p
+. . . . r . p P
+B b P . . . . .
+. P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . K . .
+
+Move 79: f1g1
+. N . . r k . .
+. . . . . . . p
+. . . . r . p P
+B b P . . . . .
+. P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 80: e8b8
+. r . . . k . .
+. . . . . . . p
+. . . . r . p P
+B b P . . . . .
+. P . . . . P .
+P . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 81: g4g5
+. r . . . k . .
+. . . . . . . p
+. . . . r . p P
+B b P . . . P .
+. P . . . . . .
+P . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 82: e6e7
+. r . . . k . .
+. . . . r . . p
+. . . . . . p P
+B b P . . . P .
+. P . . . . . .
+P . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 83: a3a4
+. r . . . k . .
+. . . . r . . p
+. . . . . . p P
+B b P . . . P .
+P P . . . . . .
+. . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 84: e7a7
+. r . . . k . .
+r . . . . . . p
+. . . . . . p P
+B b P . . . P .
+P P . . . . . .
+. . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 85: a5b6
+. r . . . k . .
+r . . . . . . p
+. B . . . . p P
+. b P . . . P .
+P P . . . . . .
+. . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 86: b8b7
+. . . . . k . .
+r r . . . . . p
+. B . . . . p P
+. b P . . . P .
+P P . . . . . .
+. . . . . . . B
+. . . . . . R .
+. R b n . . K .
+
+Move 87: g2a2
+. . . . . k . .
+r r . . . . . p
+. B . . . . p P
+. b P . . . P .
+P P . . . . . .
+. . . . . . . B
+R . . . . . . .
+. R b n . . K .
+
+Move 88: b5e8
+. . . . b k . .
+r r . . . . . p
+. B . . . . p P
+. . P . . . P .
+P P . . . . . .
+. . . . . . . B
+R . . . . . . .
+. R b n . . K .
+
+Move 89: h3f5
+. . . . b k . .
+r r . . . . . p
+. B . . . . p P
+. . P . . B P .
+P P . . . . . .
+. . . . . . . .
+R . . . . . . .
+. R b n . . K .
+
+Move 90: c1b2
+. . . . b k . .
+r r . . . . . p
+. B . . . . p P
+. . P . . B P .
+P P . . . . . .
+. . . . . . . .
+R b . . . . . .
+. R . n . . K .
+
+Move 91: a4a5
+. . . . b k . .
+r r . . . . . p
+. B . . . . p P
+P . P . . B P .
+. P . . . . . .
+. . . . . . . .
+R b . . . . . .
+. R . n . . K .
+
+Move 92: d1f2
+. . . . b k . .
+r r . . . . . p
+. B . . . . p P
+P . P . . B P .
+. P . . . . . .
+. . . . . . . .
+R b . . . n . .
+. R . . . . K .
+
+Move 93: c5c6
+. . . . b k . .
+r r . . . . . p
+. B P . . . p P
+P . . . . B P .
+. P . . . . . .
+. . . . . . . .
+R b . . . n . .
+. R . . . . K .
+
+Move 94: b2d4
+. . . . b k . .
+r r . . . . . p
+. B P . . . p P
+P . . . . B P .
+. P . b . . . .
+. . . . . . . .
+R . . . . n . .
+. R . . . . K .
+
+Move 95: b6d8
+. . . B b k . .
+r r . . . . . p
+. . P . . . p P
+P . . . . B P .
+. P . b . . . .
+. . . . . . . .
+R . . . . n . .
+. R . . . . K .
+
+Move 96: b7e7
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . . . . B P .
+. P . b . . . .
+. . . . . . . .
+R . . . . n . .
+. R . . . . K .
+
+Move 97: b1e1
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . . . . B P .
+. P . b . . . .
+. . . . . . . .
+R . . . . n . .
+. . . . R . K .
+
+Move 98: f2e4
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . . . . B P .
+. P . b n . . .
+. . . . . . . .
+R . . . . . . .
+. . . . R . K .
+
+Move 99: g1h2
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . . . . B P .
+. P . b n . . .
+. . . . . . . .
+R . . . . . . K
+. . . . R . . .
+
+Move 100: a7d7
+. . . B b k . .
+. . . r r . . p
+. . P . . . p P
+P . . . . B P .
+. P . b n . . .
+. . . . . . . .
+R . . . . . . K
+. . . . R . . .
+
+Move 101: f5g4
+. . . B b k . .
+. . . r r . . p
+. . P . . . p P
+P . . . . . P .
+. P . b n . B .
+. . . . . . . .
+R . . . . . . K
+. . . . R . . .
+
+Move 102: d7a7
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . . . . . P .
+. P . b n . B .
+. . . . . . . .
+R . . . . . . K
+. . . . R . . .
+
+Move 103: h2h1
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . . . . . P .
+. P . b n . B .
+. . . . . . . .
+R . . . . . . .
+. . . . R . . K
+
+Move 104: e4c5
+. . . B b k . .
+r . . . r . . p
+. . P . . . p P
+P . n . . . P .
+. P . b . . B .
+. . . . . . . .
+R . . . . . . .
+. . . . R . . K
+
+Move 105: d8c7
+. . . . b k . .
+r . B . r . . p
+. . P . . . p P
+P . n . . . P .
+. P . b . . B .
+. . . . . . . .
+R . . . . . . .
+. . . . R . . K
+
+Move 106: a7a8
+r . . . b k . .
+. . B . r . . p
+. . P . . . p P
+P . n . . . P .
+. P . b . . B .
+. . . . . . . .
+R . . . . . . .
+. . . . R . . K
+
+Move 107: c7e5
+r . . . b k . .
+. . . . r . . p
+. . P . . . p P
+P . n . B . P .
+. P . b . . B .
+. . . . . . . .
+R . . . . . . .
+. . . . R . . K
+
+Move 108: d4b2
+r . . . b k . .
+. . . . r . . p
+. . P . . . p P
+P . n . B . P .
+. P . . . . B .
+. . . . . . . .
+R b . . . . . .
+. . . . R . . K
+
+Move 109: g4d1
+r . . . b k . .
+. . . . r . . p
+. . P . . . p P
+P . n . B . P .
+. P . . . . . .
+. . . . . . . .
+R b . . . . . .
+. . . B R . . K
+
+Move 110: b2c3
+r . . . b k . .
+. . . . r . . p
+. . P . . . p P
+P . n . B . P .
+. P . . . . . .
+. . b . . . . .
+R . . . . . . .
+. . . B R . . K
+
+Move 111: a2e2
+r . . . b k . .
+. . . . r . . p
+. . P . . . p P
+P . n . B . P .
+. P . . . . . .
+. . b . . . . .
+. . . . R . . .
+. . . B R . . K
+
+Move 112: a8a5
+. . . . b k . .
+. . . . r . . p
+. . P . . . p P
+r . n . B . P .
+. P . . . . . .
+. . b . . . . .
+. . . . R . . .
+. . . B R . . K
+
+Move 113: b4b5
+. . . . b k . .
+. . . . r . . p
+. . P . . . p P
+r P n . B . P .
+. . . . . . . .
+. . b . . . . .
+. . . . R . . .
+. . . B R . . K
+
+Move 114: e7g7
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+r P n . B . P .
+. . . . . . . .
+. . b . . . . .
+. . . . R . . .
+. . . B R . . K
+
+Move 115: e5h2
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+r P n . . . P .
+. . . . . . . .
+. . b . . . . .
+. . . . R . . B
+. . . B R . . K
+
+Move 116: a5a1
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+. P n . . . P .
+. . . . . . . .
+. . b . . . . .
+. . . . R . . B
+r . . B R . . K
+
+Move 117: e2c2
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+. P n . . . P .
+. . . . . . . .
+. . b . . . . .
+. . R . . . . B
+r . . B R . . K
+
+Move 118: c5a4
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . b . . . . .
+. . R . . . . B
+r . . B R . . K
+
+Move 119: c2g2
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . b . . . . .
+. . . . . . R B
+r . . B R . . K
+
+Move 120: c3d2
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . .
+. . . b . . R B
+r . . B R . . K
+
+Move 121: d1e2
+. . . . b k . .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . .
+. . . b B . R B
+r . . . R . . K
+
+Move 122: f8g8
+. . . . b . k .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . .
+. . . b B . R B
+r . . . R . . K
+
+Move 123: e2f1
+. . . . b . k .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . .
+. . . b . . R B
+r . . . R B . K
+
+Move 124: e8d7
+. . . . . . k .
+. . . b . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . .
+. . . b . . R B
+r . . . R B . K
+
+Move 125: g2e2
+. . . . . . k .
+. . . b . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . .
+. . . b R . . B
+r . . . R B . K
+
+Move 126: d7h3
+. . . . . . k .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b R . . B
+r . . . R B . K
+
+Move 127: e1d1
+. . . . . . k .
+. . . . . . r p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b R . . B
+r . . R . B . K
+
+Move 128: g7a7
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b R . . B
+r . . R . B . K
+
+Move 129: h2g1
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b R . . .
+r . . R . B B K
+
+Move 130: a1c1
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b R . . .
+. . r R . B B K
+
+Move 131: e2g2
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b . . R .
+. . r R . B B K
+
+Move 132: c1d1
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . . . . b
+. . . b . . R .
+. . . r . B B K
+
+Move 133: g1e3
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P . . . . P .
+n . . . . . . .
+. . . . B . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 134: a4c5
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P n . . . P .
+. . . . . . . .
+. . . . B . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 135: e3f4
+. . . . . . k .
+r . . . . . . p
+. . P . . . p P
+. P n . . . P .
+. . . . . B . .
+. . . . . . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 136: a7a2
+. . . . . . k .
+. . . . . . . p
+. . P . . . p P
+. P n . . . P .
+. . . . . B . .
+. . . . . . . b
+r . . b . . R .
+. . . r . B . K
+
+Move 137: f4d6
+. . . . . . k .
+. . . . . . . p
+. . P B . . p P
+. P n . . . P .
+. . . . . . . .
+. . . . . . . b
+r . . b . . R .
+. . . r . B . K
+
+Move 138: a2a4
+. . . . . . k .
+. . . . . . . p
+. . P B . . p P
+. P n . . . P .
+r . . . . . . .
+. . . . . . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 139: d6e5
+. . . . . . k .
+. . . . . . . p
+. . P . . . p P
+. P n . B . P .
+r . . . . . . .
+. . . . . . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 140: c5e6
+. . . . . . k .
+. . . . . . . p
+. . P . n . p P
+. P . . B . P .
+r . . . . . . .
+. . . . . . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 141: e5b8
+. B . . . . k .
+. . . . . . . p
+. . P . n . p P
+. P . . . . P .
+r . . . . . . .
+. . . . . . . b
+. . . b . . R .
+. . . r . B . K
+
+Move 142: d1a1
+. B . . . . k .
+. . . . . . . p
+. . P . n . p P
+. P . . . . P .
+r . . . . . . .
+. . . . . . . b
+. . . b . . R .
+r . . . . B . K
+
+Move 143: b8d6
+. . . . . . k .
+. . . . . . . p
+. . P B n . p P
+. P . . . . P .
+r . . . . . . .
+. . . . . . . b
+. . . b . . R .
+r . . . . B . K
+
+Move 144: e6d4
+. . . . . . k .
+. . . . . . . p
+. . P B . . p P
+. P . . . . P .
+r . . n . . . .
+. . . . . . . b
+. . . b . . R .
+r . . . . B . K
+
+Move 145: d6f8
+. . . . . B k .
+. . . . . . . p
+. . P . . . p P
+. P . . . . P .
+r . . n . . . .
+. . . . . . . b
+. . . b . . R .
+r . . . . B . K
+
+Move 146: d2a5
+. . . . . B k .
+. . . . . . . p
+. . P . . . p P
+b P . . . . P .
+r . . n . . . .
+. . . . . . . b
+. . . . . . R .
+r . . . . B . K
+
+Move 147: f8g7
+. . . . . . k .
+. . . . . . B p
+. . P . . . p P
+b P . . . . P .
+r . . n . . . .
+. . . . . . . b
+. . . . . . R .
+r . . . . B . K
+
+Move 148: a4c4
+. . . . . . k .
+. . . . . . B p
+. . P . . . p P
+b P . . . . P .
+. . r n . . . .
+. . . . . . . b
+. . . . . . R .
+r . . . . B . K
+
+Move 149: c6c7
+. . . . . . k .
+. . P . . . B p
+. . . . . . p P
+b P . . . . P .
+. . r n . . . .
+. . . . . . . b
+. . . . . . R .
+r . . . . B . K
+
+Move 150: c4c1
+. . . . . . k .
+. . P . . . B p
+. . . . . . p P
+b P . . . . P .
+. . . n . . . .
+. . . . . . . b
+. . . . . . R .
+r . r . . B . K
+
+Move 151: g2c2
+. . . . . . k .
+. . P . . . B p
+. . . . . . p P
+b P . . . . P .
+. . . n . . . .
+. . . . . . . b
+. . R . . . . .
+r . r . . B . K
+
+Move 152: d4e2
+. . . . . . k .
+. . P . . . B p
+. . . . . . p P
+b P . . . . P .
+. . . . . . . .
+. . . . . . . b
+. . R . n . . .
+r . r . . B . K
+
+Move 153: g7h8
+. . . . . . k B
+. . P . . . . p
+. . . . . . p P
+b P . . . . P .
+. . . . . . . .
+. . . . . . . b
+. . R . n . . .
+r . r . . B . K
+
+Move 154: h3g4
+. . . . . . k B
+. . P . . . . p
+. . . . . . p P
+b P . . . . P .
+. . . . . . b .
+. . . . . . . .
+. . R . n . . .
+r . r . . B . K
+
+Move 155: b5b6
+. . . . . . k B
+. . P . . . . p
+. P . . . . p P
+b . . . . . P .
+. . . . . . b .
+. . . . . . . .
+. . R . n . . .
+r . r . . B . K
+
+Move 156: a5b6
+. . . . . . k B
+. . P . . . . p
+. b . . . . p P
+. . . . . . P .
+. . . . . . b .
+. . . . . . . .
+. . R . n . . .
+r . r . . B . K
+
+Move 157: c2c3
+. . . . . . k B
+. . P . . . . p
+. b . . . . p P
+. . . . . . P .
+. . . . . . b .
+. . R . . . . .
+. . . . n . . .
+r . r . . B . K
+
+Move 158: b6e3
+. . . . . . k B
+. . P . . . . p
+. . . . . . p P
+. . . . . . P .
+. . . . . . b .
+. . R . b . . .
+. . . . n . . .
+r . r . . B . K
+
+Move 159: c3c4
+. . . . . . k B
+. . P . . . . p
+. . . . . . p P
+. . . . . . P .
+. . R . . . b .
+. . . . b . . .
+. . . . n . . .
+r . r . . B . K
+
+Move 160: g8h8
+. . . . . . . k
+. . P . . . . p
+. . . . . . p P
+. . . . . . P .
+. . R . . . b .
+. . . . b . . .
+. . . . n . . .
+r . r . . B . K
+
+Move 161: c4f4
+. . . . . . . k
+. . P . . . . p
+. . . . . . p P
+. . . . . . P .
+. . . . . R b .
+. . . . b . . .
+. . . . n . . .
+r . r . . B . K
+
+Move 162: c1b1
+. . . . . . . k
+. . P . . . . p
+. . . . . . p P
+. . . . . . P .
+. . . . . R b .
+. . . . b . . .
+. . . . n . . .
+r r . . . B . K
+
+Move 163: c7c8b
+. . B . . . . k
+. . . . . . . p
+. . . . . . p P
+. . . . . . P .
+. . . . . R b .
+. . . . b . . .
+. . . . n . . .
+r r . . . B . K
+
+Move 164: a1a2
+. . B . . . . k
+. . . . . . . p
+. . . . . . p P
+. . . . . . P .
+. . . . . R b .
+. . . . b . . .
+r . . . n . . .
+. r . . . B . K
+
+Move 165: f4f5
+. . B . . . . k
+. . . . . . . p
+. . . . . . p P
+. . . . . R P .
+. . . . . . b .
+. . . . b . . .
+r . . . n . . .
+. r . . . B . K
+
+Move 166: e3g1
+. . B . . . . k
+. . . . . . . p
+. . . . . . p P
+. . . . . R P .
+. . . . . . b .
+. . . . . . . .
+r . . . n . . .
+. r . . . B b K
+
+Move 167: f5f8
+. . B . . R . k
+. . . . . . . p
+. . . . . . p P
+. . . . . . P .
+. . . . . . b .
+. . . . . . . .
+r . . . n . . .
+. r . . . B b K
+
+Game result: 1-0
