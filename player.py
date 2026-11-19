@@ -13,27 +13,64 @@ import torch
 from torch import nn
 
 
-NUM_ACTIONS = 5 * 64 * 64  # 20,480
-# Codes: 0 = no promotion, 1 = queen, 2 = rook, 3 = bishop, 4 = knight
-PROMOTION_CODE = {None: 0, chess.QUEEN: 1, chess.ROOK: 2,
-                  chess.BISHOP: 3, chess.KNIGHT: 4}
-CODE_PROMOTION = {code: piece for piece, code in PROMOTION_CODE.items()}
+NUM_NORMAL_ACTIONS = 64 * 64
 
+PROMOTION_PATHS = (
+    # White promotions
+    "a7a8", "a7b8",
+    "b7a8", "b7b8", "b7c8",
+    "c7b8", "c7c8", "c7d8",
+    "d7c8", "d7d8", "d7e8",
+    "e7d8", "e7e8", "e7f8",
+    "f7e8", "f7f8", "f7g8",
+    "g7f8", "g7g8", "g7h8",
+    "h7g8", "h7h8",
+
+    # Black promotions
+    "a2a1", "a2b1",
+    "b2a1", "b2b1", "b2c1",
+    "c2b1", "c2c1", "c2d1",
+    "d2c1", "d2d1", "d2e1",
+    "e2d1", "e2e1", "e2f1",
+    "f2e1", "f2f1", "f2g1",
+    "g2f1", "g2g1", "g2h1",
+    "h2g1", "h2h1",
+)
+
+PROMOTION_MOVES = [
+    path + piece
+    for path in PROMOTION_PATHS
+    for piece in ("q", "r", "b", "n")
+]
+
+
+PROMOTION_TO_ID = {
+    move: action_id + NUM_NORMAL_ACTIONS
+    for action_id, move in enumerate(PROMOTION_MOVES)
+}
+
+# reduced num_actions from 20,480 to 4272
+NUM_ACTIONS = NUM_NORMAL_ACTIONS + len(PROMOTION_MOVES)  # 4272
 
 def move_to_id(uci_move):
-    """Consistent with the project proposal's 5 * 64 * 64 action scheme."""
+    """Encode a UCI move as a network output index."""
     move = chess.Move.from_uci(uci_move)
-    code = PROMOTION_CODE[move.promotion]
-    return code * 4096 + move.from_square * 64 + move.to_square
 
+    if move.promotion is None:
+        return move.from_square * 64 + move.to_square
+
+    return PROMOTION_TO_ID[uci_move]
 
 def id_to_move(action_id):
-    """Decode an action ID to UCI; legality must be checked by ChessEnv."""
+    """Decode an action ID to UCI. ChessEnv checks board legality."""
     if not 0 <= action_id < NUM_ACTIONS:
-        raise ValueError(f"Move Id out of range: {action_id}")
-    code, square_pair = divmod(action_id, 4096)
-    from_square, to_square = divmod(square_pair, 64)
-    return chess.Move(from_square, to_square, promotion=CODE_PROMOTION[code]).uci()
+        raise ValueError(f"Move ID out of range: {action_id}")
+
+    if action_id < NUM_NORMAL_ACTIONS:
+        from_square, to_square = divmod(action_id, 64)
+        return chess.Move(from_square, to_square).uci()
+
+    return PROMOTION_MOVES[action_id - NUM_NORMAL_ACTIONS]
 
 
 def encode_board(fen):
