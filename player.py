@@ -65,8 +65,54 @@ def encode_board(fen):
     return x
 
 
+class ResidualBlock(nn.Module):
+    """Refine board features while preserving the input through a skip connection."""
+
+    def __init__(self, channels: int):
+        super().__init__()
+        self.conv1 = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+        self.relu = nn.ReLU()
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        features = self.relu(self.conv1(x))
+        features = self.conv2(features)
+        return self.relu(x + features)
+
+
+class CNNQNetwork(nn.Module):
+    """Estimate one Q-value per action from an 18-channel chessboard."""
+    # we can tune channels and num_blocks across gameplay
+    def __init__(self, channels: int = 32, num_blocks: int = 3):
+        super().__init__()
+
+        # Keep one feature vector at each of the 64 board squares.
+        self.input_layer = nn.Sequential(
+            nn.Conv2d(18, channels, kernel_size=3, padding=1),
+            nn.ReLU(),
+        )
+
+        self.blocks = nn.Sequential(
+            *(ResidualBlock(channels) for _ in range(num_blocks))
+        )
+
+        # Preserve square locations when mapping board features to action IDs.
+        self.q_head = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(channels * 8 * 8, 128),
+            nn.ReLU(),
+            nn.Linear(128, NUM_ACTIONS),
+        )
+
+    def forward(self, states: torch.Tensor) -> torch.Tensor:
+        x = self.input_layer(states)
+        x = self.blocks(x)
+        return self.q_head(x)
+
+
 class QNetwork(nn.Module):
     """Small MLP producing one Q-value per possible action."""
+
     def __init__(self):
         super().__init__()
         self.layers = nn.Sequential(
