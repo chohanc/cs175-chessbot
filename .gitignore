@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+mate_dqn.pt
+mate_dqn_64.pt
