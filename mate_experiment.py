@@ -46,9 +46,11 @@ def evaluate(player, positions):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--practice-positions", type=int, choices=(8, 64), default=8)
+    parser.add_argument("--seed", type=int, default=24,
+                        help="seed for model initialization and training randomness")
     parser.add_argument("--checkpoint", help="optional path for the trained DQN")
     args = parser.parse_args()
-    model_seed, split_seed = 24, 175
+    model_seed, split_seed = args.seed, 175
     total_attempts = 2400
     positions = make_positions(args.practice_positions + 32, split_seed)
     # Reserve the original held-out set when expanding the practice set.
