@@ -45,12 +45,16 @@ def evaluate(player, positions):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--practice-positions", type=int, choices=(8, 64), default=8)
     parser.add_argument("--checkpoint", help="optional path for the trained DQN")
     args = parser.parse_args()
     model_seed, split_seed = 24, 175
-    rounds = 300
-    positions = make_positions(40, split_seed)
-    practice, held_out = positions[:8], positions[8:]
+    total_attempts = 2400
+    positions = make_positions(args.practice_positions + 32, split_seed)
+    # Reserve the original held-out set when expanding the practice set.
+    held_out = positions[8:40]
+    practice = positions[:8] + positions[40:]
+    full_rounds, extra_attempts = divmod(total_attempts, len(practice))
     random.seed(model_seed)
     torch.manual_seed(model_seed)
     torch.set_num_threads(1)
@@ -59,8 +63,9 @@ def main():
     env = ChessEnv()
     before = evaluate(player, positions)
 
-    for _ in range(rounds):
-        for fen in random.sample(practice, len(practice)):
+    for attempts_made in range(0, total_attempts, len(practice)):
+        round_size = min(len(practice), total_attempts - attempts_made)
+        for fen in random.sample(practice, round_size):
             env.board.set_fen(fen)
             action = player.select_move(fen, env.get_legal_moves(), training=True)
             next_state, reward, _ = env.step(action)
@@ -76,7 +81,11 @@ def main():
         "python": platform.python_version(), "torch": str(torch.__version__),
         "chess": chess.__version__, "device": str(player.device),
         "model_and_training_seed": model_seed, "split_seed": split_seed,
-        "attempts_per_practice_position": rounds, "updates": player.training_steps,
+        "total_attempts": total_attempts,
+        "attempts_per_practice_position": {
+            "min": full_rounds, "max": full_rounds + bool(extra_attempts),
+        },
+        "updates": player.training_steps,
     }
     for name, split in [("practice", practice), ("held_out", held_out)]:
         report[name] = {

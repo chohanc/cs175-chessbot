@@ -5,7 +5,11 @@
   "device": "cpu",
   "model_and_training_seed": 24,
   "split_seed": 175,
-  "attempts_per_practice_position": 300,
+  "total_attempts": 2400,
+  "attempts_per_practice_position": {
+    "min": 300,
+    "max": 300
+  },
   "updates": 2145,
   "practice": {
     "total": 8,

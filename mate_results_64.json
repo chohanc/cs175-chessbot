@@ -1,0 +1,1084 @@
+{
+  "python": "3.12.0",
+  "torch": "2.8.0",
+  "chess": "1.11.2",
+  "device": "cpu",
+  "model_and_training_seed": 24,
+  "split_seed": 175,
+  "total_attempts": 2400,
+  "attempts_per_practice_position": {
+    "min": 37,
+    "max": 38
+  },
+  "updates": 2145,
+  "practice": {
+    "total": 64,
+    "solved_before": 3,
+    "solved_after": 51,
+    "positions": [
+      {
+        "fen": "2Q5/8/8/8/8/8/8/5K1k w - - 0 1",
+        "before": {
+          "move": "c8f5",
+          "mate": false
+        },
+        "after": {
+          "move": "c8h8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5K1k/8/8/8/8/6Q1/8/8 w - - 0 1",
+        "before": {
+          "move": "g3g7",
+          "mate": true
+        },
+        "after": {
+          "move": "g3g7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/5Q2/2K5/8/3k4 w - - 0 1",
+        "before": {
+          "move": "c3c4",
+          "mate": false
+        },
+        "after": {
+          "move": "f4f1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5k2/8/6K1/8/8/8/3Q4/8 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "d2d8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/5K1k/4Q3/8/8/8 w - - 0 1",
+        "before": {
+          "move": "e4a8",
+          "mate": false
+        },
+        "after": {
+          "move": "e4h1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/1Q6/8/8/8/2K5/8/2k5 w - - 0 1",
+        "before": {
+          "move": "c3c4",
+          "mate": false
+        },
+        "after": {
+          "move": "b7h1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/Q7/8/1K6/8/2k5 w - - 0 1",
+        "before": {
+          "move": "a5e5",
+          "mate": false
+        },
+        "after": {
+          "move": "a5e1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "7k/8/6K1/8/8/8/3Q4/8 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "d2d8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/5K2/Q7/7k w - - 0 1",
+        "before": {
+          "move": "a2e6",
+          "mate": false
+        },
+        "after": {
+          "move": "a2g2",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5k2/Q7/4K3/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "a7a3",
+          "mate": false
+        },
+        "after": {
+          "move": "a7g1",
+          "mate": false
+        }
+      },
+      {
+        "fen": "2k5/8/2K5/8/3Q4/8/8/8 w - - 0 1",
+        "before": {
+          "move": "d4b4",
+          "mate": false
+        },
+        "after": {
+          "move": "d4h8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/2Q5/4K3/8/4k3 w - - 0 1",
+        "before": {
+          "move": "c4c2",
+          "mate": false
+        },
+        "after": {
+          "move": "c4a6",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/5K1k/8/4Q3/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "e5g5",
+          "mate": false
+        },
+        "after": {
+          "move": "e5g7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/4Q3/8/5K1k/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "e7h4",
+          "mate": false
+        },
+        "after": {
+          "move": "e7h7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/8/k1K5/5Q2 w - - 0 1",
+        "before": {
+          "move": "f1c1",
+          "mate": false
+        },
+        "after": {
+          "move": "f1a6",
+          "mate": true
+        }
+      },
+      {
+        "fen": "6k1/8/6K1/8/8/8/1Q6/8 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "b2g7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/2Q5/8/8/1K6/8/k7 w - - 0 1",
+        "before": {
+          "move": "c6a8",
+          "mate": false
+        },
+        "after": {
+          "move": "c6h1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/6Q1/8/8/8/k1K5/8/8 w - - 0 1",
+        "before": {
+          "move": "g7d4",
+          "mate": false
+        },
+        "after": {
+          "move": "g7a7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "2KQ4/k7/8/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "c8c7",
+          "mate": false
+        },
+        "after": {
+          "move": "d8a5",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5K2/7k/8/8/8/8/1Q6/8 w - - 0 1",
+        "before": {
+          "move": "b2b8",
+          "mate": false
+        },
+        "after": {
+          "move": "b2g7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/6K1/3Q4/7k w - - 0 1",
+        "before": {
+          "move": "d2d3",
+          "mate": false
+        },
+        "after": {
+          "move": "d2d1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "k1K5/8/8/8/8/8/8/4Q3 w - - 0 1",
+        "before": {
+          "move": "e1a5",
+          "mate": true
+        },
+        "after": {
+          "move": "e1a5",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/4Q3/8/8/6K1/8/6k1 w - - 0 1",
+        "before": {
+          "move": "e6f7",
+          "mate": false
+        },
+        "after": {
+          "move": "e6e1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5Q2/8/8/8/8/8/8/5K1k w - - 0 1",
+        "before": {
+          "move": "f8d6",
+          "mate": false
+        },
+        "after": {
+          "move": "f8f7",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/3Q4/5K1k/8 w - - 0 1",
+        "before": {
+          "move": "d3f3",
+          "mate": false
+        },
+        "after": {
+          "move": "d3h7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5K1k/8/8/8/8/8/5Q2/8 w - - 0 1",
+        "before": {
+          "move": "f2c5",
+          "mate": false
+        },
+        "after": {
+          "move": "f2h4",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/5K1k/8/1Q6/8/8/8 w - - 0 1",
+        "before": {
+          "move": "b4b8",
+          "mate": false
+        },
+        "after": {
+          "move": "b4h4",
+          "mate": true
+        }
+      },
+      {
+        "fen": "1k6/7Q/1K6/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "h7h8",
+          "mate": true
+        },
+        "after": {
+          "move": "h7h8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/5K1k/8/3Q4/8/8/8 w - - 0 1",
+        "before": {
+          "move": "d4b4",
+          "mate": false
+        },
+        "after": {
+          "move": "d4h4",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/3Q4/8/k7/2K5/8/8/8 w - - 0 1",
+        "before": {
+          "move": "d7f5",
+          "mate": false
+        },
+        "after": {
+          "move": "d7a7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/k1K5/8/8/8/8/2Q5 w - - 0 1",
+        "before": {
+          "move": "c1e3",
+          "mate": false
+        },
+        "after": {
+          "move": "c1a1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/2Q5/8/8/8/7K/8/7k w - - 0 1",
+        "before": {
+          "move": "c7g7",
+          "mate": false
+        },
+        "after": {
+          "move": "c7c1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5K2/7k/8/8/8/8/6Q1/8 w - - 0 1",
+        "before": {
+          "move": "g2h2",
+          "mate": false
+        },
+        "after": {
+          "move": "g2g7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "k1K5/8/8/8/8/8/8/2Q5 w - - 0 1",
+        "before": {
+          "move": "c1e3",
+          "mate": false
+        },
+        "after": {
+          "move": "c1a1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "6Q1/8/8/2K5/k7/8/8/8 w - - 0 1",
+        "before": {
+          "move": "g8h8",
+          "mate": false
+        },
+        "after": {
+          "move": "g8a2",
+          "mate": true
+        }
+      },
+      {
+        "fen": "1k6/8/1K6/8/2Q5/8/8/8 w - - 0 1",
+        "before": {
+          "move": "c4c2",
+          "mate": false
+        },
+        "after": {
+          "move": "c4g8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/5Q2/8/6K1/8/6k1 w - - 0 1",
+        "before": {
+          "move": "f5e6",
+          "mate": false
+        },
+        "after": {
+          "move": "f5b1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "k7/8/1K6/8/5Q2/8/8/8 w - - 0 1",
+        "before": {
+          "move": "f4c1",
+          "mate": false
+        },
+        "after": {
+          "move": "f4f8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/2K4Q/8/2k5 w - - 0 1",
+        "before": {
+          "move": "c3c4",
+          "mate": false
+        },
+        "after": {
+          "move": "h3h1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/5Q2/8/8/8/k7/2K5/8 w - - 0 1",
+        "before": {
+          "move": "f7b7",
+          "mate": false
+        },
+        "after": {
+          "move": "f7e6",
+          "mate": false
+        }
+      },
+      {
+        "fen": "k7/7Q/K7/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "a6b6",
+          "mate": false
+        },
+        "after": {
+          "move": "h7h8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "7Q/8/8/8/8/3K4/8/2k5 w - - 0 1",
+        "before": {
+          "move": "d3e3",
+          "mate": false
+        },
+        "after": {
+          "move": "h8h4",
+          "mate": false
+        }
+      },
+      {
+        "fen": "7k/8/7K/8/6Q1/8/8/8 w - - 0 1",
+        "before": {
+          "move": "g4e2",
+          "mate": false
+        },
+        "after": {
+          "move": "g4c8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/3Q4/8/5K1k w - - 0 1",
+        "before": {
+          "move": "d3f3",
+          "mate": false
+        },
+        "after": {
+          "move": "d3h7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/5K2/7k/8/8/8/2Q5 w - - 0 1",
+        "before": {
+          "move": "c1e3",
+          "mate": false
+        },
+        "after": {
+          "move": "c1g5",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/3Q4/8/8/8/8/8/k1K5 w - - 0 1",
+        "before": {
+          "move": "d7f5",
+          "mate": false
+        },
+        "after": {
+          "move": "d7a7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/6KQ/8/6k1 w - - 0 1",
+        "before": {
+          "move": "h3h8",
+          "mate": false
+        },
+        "after": {
+          "move": "h3f1",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/4Q3/8/8/8/7K/8/7k w - - 0 1",
+        "before": {
+          "move": "e7h4",
+          "mate": false
+        },
+        "after": {
+          "move": "e7e8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "7k/8/6K1/8/8/8/8/3Q4 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "d1d8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "5k2/8/5K2/8/8/5Q2/8/8 w - - 0 1",
+        "before": {
+          "move": "f6e6",
+          "mate": false
+        },
+        "after": {
+          "move": "f3a8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "6k1/8/3Q2K1/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "d6g3",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/3K4/7Q/4k3 w - - 0 1",
+        "before": {
+          "move": "h2d2",
+          "mate": false
+        },
+        "after": {
+          "move": "h2g1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "2K5/k7/8/8/8/1Q6/8/8 w - - 0 1",
+        "before": {
+          "move": "b3g8",
+          "mate": false
+        },
+        "after": {
+          "move": "b3b7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "1k6/8/1K6/8/8/3Q4/8/8 w - - 0 1",
+        "before": {
+          "move": "d3f3",
+          "mate": false
+        },
+        "after": {
+          "move": "d3d8",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/k1K5/2Q5/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "c6a8",
+          "mate": false
+        },
+        "after": {
+          "move": "c6b7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/1Q6/7K/8/6k1 w - - 0 1",
+        "before": {
+          "move": "b4c3",
+          "mate": false
+        },
+        "after": {
+          "move": "b4b1",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/1Q6/8/8/6K1/8/7k w - - 0 1",
+        "before": {
+          "move": "b6g1",
+          "mate": false
+        },
+        "after": {
+          "move": "g3h4",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/6Q1/8/k1K5/8/8 w - - 0 1",
+        "before": {
+          "move": "g5f6",
+          "mate": false
+        },
+        "after": {
+          "move": "g5a5",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/6Q1/8/3K4/8/4k3 w - - 0 1",
+        "before": {
+          "move": "g5f6",
+          "mate": false
+        },
+        "after": {
+          "move": "d3c2",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/2Q3K1/8/6k1 w - - 0 1",
+        "before": {
+          "move": "c3c4",
+          "mate": false
+        },
+        "after": {
+          "move": "c3c1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/7k/5K2/8/2Q5/8 w - - 0 1",
+        "before": {
+          "move": "c2e2",
+          "mate": false
+        },
+        "after": {
+          "move": "c2h7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/6Q1/8/8/3K4/8/3k4 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "g6e8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/2K5/k7/8/5Q2/8/8 w - - 0 1",
+        "before": {
+          "move": "f3f8",
+          "mate": false
+        },
+        "after": {
+          "move": "f3a3",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/2K5/4Q3/k7 w - - 0 1",
+        "before": {
+          "move": "e2a2",
+          "mate": false
+        },
+        "after": {
+          "move": "c3c2",
+          "mate": false
+        }
+      }
+    ]
+  },
+  "held_out": {
+    "total": 32,
+    "solved_before": 3,
+    "solved_after": 4,
+    "positions": [
+      {
+        "fen": "8/8/8/8/8/4K3/2Q5/5k2 w - - 0 1",
+        "before": {
+          "move": "e3d2",
+          "mate": false
+        },
+        "after": {
+          "move": "c2h7",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/5K1k/8/8/5Q2/8/8 w - - 0 1",
+        "before": {
+          "move": "f6e7",
+          "mate": false
+        },
+        "after": {
+          "move": "f3a8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/5K2/7k/5Q2 w - - 0 1",
+        "before": {
+          "move": "f1c1",
+          "mate": false
+        },
+        "after": {
+          "move": "f1a6",
+          "mate": false
+        }
+      },
+      {
+        "fen": "5k2/Q7/6K1/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "a7f2",
+          "mate": false
+        }
+      },
+      {
+        "fen": "5k2/7Q/6K1/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "g6f5",
+          "mate": false
+        },
+        "after": {
+          "move": "h7h8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/k1K5/8/8/2Q5/8 w - - 0 1",
+        "before": {
+          "move": "c2e2",
+          "mate": false
+        },
+        "after": {
+          "move": "c2h7",
+          "mate": false
+        }
+      },
+      {
+        "fen": "4k3/8/4K3/8/2Q5/8/8/8 w - - 0 1",
+        "before": {
+          "move": "c4c2",
+          "mate": false
+        },
+        "after": {
+          "move": "c4a4",
+          "mate": false
+        }
+      },
+      {
+        "fen": "4Q3/2K5/k7/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "c7c6",
+          "mate": false
+        },
+        "after": {
+          "move": "e8g6",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/4Q3/5K1k/8/8 w - - 0 1",
+        "before": {
+          "move": "e4a8",
+          "mate": false
+        },
+        "after": {
+          "move": "e4d4",
+          "mate": false
+        }
+      },
+      {
+        "fen": "5Q2/k1K5/8/8/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "f8d6",
+          "mate": false
+        },
+        "after": {
+          "move": "c7c8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/7Q/8/8/8/8/k1K5 w - - 0 1",
+        "before": {
+          "move": "h6f8",
+          "mate": false
+        },
+        "after": {
+          "move": "h6f8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "k7/8/K7/8/8/8/8/Q7 w - - 0 1",
+        "before": {
+          "move": "a6b6",
+          "mate": false
+        },
+        "after": {
+          "move": "a1e1",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/3K4/7Q/3k4 w - - 0 1",
+        "before": {
+          "move": "h2d2",
+          "mate": true
+        },
+        "after": {
+          "move": "h2g1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/K7/4Q3/k7 w - - 0 1",
+        "before": {
+          "move": "a3b3",
+          "mate": false
+        },
+        "after": {
+          "move": "a3b3",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/5K1k/8/4Q3/8 w - - 0 1",
+        "before": {
+          "move": "e2a2",
+          "mate": false
+        },
+        "after": {
+          "move": "e2c2",
+          "mate": false
+        }
+      },
+      {
+        "fen": "5Q2/8/8/8/7k/5K2/8/8 w - - 0 1",
+        "before": {
+          "move": "f8d6",
+          "mate": false
+        },
+        "after": {
+          "move": "f3f2",
+          "mate": false
+        }
+      },
+      {
+        "fen": "1k6/8/1K6/8/8/8/8/7Q w - - 0 1",
+        "before": {
+          "move": "h1c1",
+          "mate": false
+        },
+        "after": {
+          "move": "h1d1",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/k1K5/8/8/4Q3/8/8/8 w - - 0 1",
+        "before": {
+          "move": "e4a8",
+          "mate": false
+        },
+        "after": {
+          "move": "e4h1",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/8/8/k1KQ4 w - - 0 1",
+        "before": {
+          "move": "d1g1",
+          "mate": false
+        },
+        "after": {
+          "move": "d1d8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/2Q5/8/8/4K3/8/5k2 w - - 0 1",
+        "before": {
+          "move": "e3d2",
+          "mate": false
+        },
+        "after": {
+          "move": "c6h1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/3Q4/8/5K2/8/5k2 w - - 0 1",
+        "before": {
+          "move": "d5b7",
+          "mate": false
+        },
+        "after": {
+          "move": "d5g8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "5k2/8/5K2/7Q/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "h5h3",
+          "mate": false
+        },
+        "after": {
+          "move": "h5e8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "1Q6/8/7k/5K2/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "b8h8",
+          "mate": true
+        },
+        "after": {
+          "move": "b8f8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/7Q/8/6K1/8/6k1 w - - 0 1",
+        "before": {
+          "move": "h5h3",
+          "mate": false
+        },
+        "after": {
+          "move": "h5e8",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/3Q4/5K2/7k w - - 0 1",
+        "before": {
+          "move": "d3f3",
+          "mate": false
+        },
+        "after": {
+          "move": "d3h7",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/8/8/8/8/2Q4K/8/7k w - - 0 1",
+        "before": {
+          "move": "c3c4",
+          "mate": false
+        },
+        "after": {
+          "move": "c3a1",
+          "mate": true
+        }
+      },
+      {
+        "fen": "8/6Q1/8/8/8/8/5K1k/8 w - - 0 1",
+        "before": {
+          "move": "g7d4",
+          "mate": false
+        },
+        "after": {
+          "move": "g7a7",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/8/8/1Q6/8/8/5K2/7k w - - 0 1",
+        "before": {
+          "move": "b5b4",
+          "mate": false
+        },
+        "after": {
+          "move": "b5g5",
+          "mate": false
+        }
+      },
+      {
+        "fen": "k7/8/1K6/8/8/8/8/5Q2 w - - 0 1",
+        "before": {
+          "move": "f1c1",
+          "mate": false
+        },
+        "after": {
+          "move": "f1a6",
+          "mate": false
+        }
+      },
+      {
+        "fen": "4k3/8/3K4/8/8/1Q6/8/8 w - - 0 1",
+        "before": {
+          "move": "b3g8",
+          "mate": true
+        },
+        "after": {
+          "move": "b3b7",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/1Q6/2K5/k7/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "b7d7",
+          "mate": false
+        },
+        "after": {
+          "move": "b7g7",
+          "mate": false
+        }
+      },
+      {
+        "fen": "8/2Q5/8/5K1k/8/8/8/8 w - - 0 1",
+        "before": {
+          "move": "c7g7",
+          "mate": false
+        },
+        "after": {
+          "move": "c7c1",
+          "mate": false
+        }
+      }
+    ]
+  }
+}
