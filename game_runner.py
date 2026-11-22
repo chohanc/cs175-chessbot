@@ -26,6 +26,7 @@ class GameRunner:
     
 
     def assign_color(self, player1_color):
+        self.player1_color = player1_color
         if player1_color == "white":
             self.white_player = self.player1
             self.black_player = self.player2
