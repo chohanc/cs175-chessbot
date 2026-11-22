@@ -2,3 +2,16 @@
 __pycache__/
 mate_dqn.pt
 mate_dqn_64.pt
+# Model checkpoints
+*.pt
+*.pth
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS and PyCharm
+.DS_Store
+.idea/

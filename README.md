@@ -77,3 +77,17 @@ done
 All five seeds improved on the held-out set. The mean solve rate rose from
 3.75% to 22.5%, or from 1.2 to 7.2 solves per run. These runs measure
 consistency across training seeds on one fixed set of mate-in-one boards.
+
+### Loading a checkpoint
+
+Run `python train.py` and enter the existing `.pt` filename when prompted.
+
+Use the same model type and architecture that created the checkpoint.
+For a CNN, `CNN_CHANNELS` and `CNN_BLOCKS` must match.
+For example, a checkpoint created with 32 channels and 3 residual blocks
+requires those same settings.
+
+To continue the same experiment, also keep `LEARNING_RATE` and `BATCH_SIZE`
+the same. The script uses the values currently set in `train.py`.
+
+Training progress is saved back to the selected checkpoint file.

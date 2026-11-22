@@ -12,6 +12,8 @@ import chess
 import torch
 from torch import nn
 
+from copy import deepcopy
+
 
 NUM_NORMAL_ACTIONS = 64 * 64
 
@@ -168,14 +170,22 @@ class SelfLearningPlayer:
     def __init__(self, gamma=0.99, lr=1e-4, epsilon=1.0,
                  epsilon_min=0.05, epsilon_decay=0.995,
                  batch_size=32, memory_size=50_000, warmup=256,
-                 target_update_every=250, device=None):
+                 target_update_every=250, device=None,
+                 *, model=None):
         self.device = torch.device(
             device or ("cuda" if torch.cuda.is_available() else "cpu")
         )
-        self.model = QNetwork().to(self.device)
-        self.target_model = QNetwork().to(self.device)
-        self.target_model.load_state_dict(self.model.state_dict())
+
+        if model is None:
+            model = QNetwork()
+
+        self.model = model.to(self.device)
+        self.target_model = deepcopy(self.model)
         self.target_model.eval()
+
+        model_name = type(model).__name__
+        self.name = model_name
+
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=lr)
         self.loss_fn = nn.MSELoss()  # (Q(s,a) - target)^2 from the proposal
 
@@ -210,10 +220,30 @@ class SelfLearningPlayer:
 
     def train_step(self):
         """Learn from one random replay batch; returns loss or None if warming up."""
-        if len(self.memory) < max(self.batch_size, self.warmup):
+
+
+        if not self.memory:
             return None
 
-        batch = random.sample(self.memory, self.batch_size)
+        # if the last move was end of a game (done) learn from it immediately with other batch of moves
+        latest = self.memory[-1]
+        done = latest[4]
+        ready = len(self.memory) >= max(self.batch_size, self.warmup)
+
+        if done:
+            batch = [latest]
+
+            if ready:
+                indices = random.sample(range(len(self.memory) - 1), self.batch_size - 1)
+                batch.extend(self.memory[i] for i in indices)
+
+        elif ready:
+            batch = random.sample(self.memory, self.batch_size)
+
+        else:
+            return None
+
+
         states = torch.stack([encode_board(t[0]) for t in batch]).to(self.device)
         action_ids = torch.tensor(
             [move_to_id(t[1]) for t in batch],
@@ -229,7 +259,7 @@ class SelfLearningPlayer:
 
         with torch.no_grad():
             next_q_all = self.target_model(next_states)
-            opponent_best = torch.zeros(self.batch_size, device=self.device)
+            opponent_best = torch.zeros(len(batch), device = self.device)
 
             for i, (_, _, _, next_fen, done) in enumerate(batch):
                 if done:
@@ -264,13 +294,19 @@ class SelfLearningPlayer:
             "optimizer": self.optimizer.state_dict(),
             "epsilon": self.epsilon,
             "training_steps": self.training_steps,
+            "target_model": self.target_model.state_dict(),
+            "replay_memory": list(self.memory),
         }, path)
 
     def load(self, path="chess_dqn.pt"):
         # Load only files you trust. The checkpoint should be one you saved.
         checkpoint = torch.load(path, map_location=self.device, weights_only=True)
         self.model.load_state_dict(checkpoint["model"])
-        self.target_model.load_state_dict(self.model.state_dict())
+        #self.target_model.load_state_dict(self.model.state_dict())
+        target_state = checkpoint.get("target_model", checkpoint["model"])
+        self.target_model.load_state_dict(target_state)
         self.optimizer.load_state_dict(checkpoint["optimizer"])
         self.epsilon = checkpoint["epsilon"]
         self.training_steps = checkpoint["training_steps"]
+        self.memory.clear()
+        self.memory.extend(checkpoint.get("replay_memory", []))
