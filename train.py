@@ -8,7 +8,7 @@ from player import CNNQNetwork, QNetwork, SelfLearningPlayer
 
 
 NUM_GAMES = 10
-MAX_PLIES = 300
+MAX_PLIES = 1000
 SAVE_EVERY = 5
 
 CNN_CHANNELS = 32
@@ -19,6 +19,7 @@ BATCH_SIZE = 32
 
 def main():
     choice = input("Choose a model [cnn/mlp, default: cnn]: ").strip().lower()
+    num_games = int(input(f"Number of training games [default: {NUM_GAMES}]: ").strip() or NUM_GAMES)
 
     if choice in ("", "cnn"):
         model = CNNQNetwork(channels=CNN_CHANNELS, num_blocks=CNN_BLOCKS)
@@ -51,7 +52,17 @@ def main():
     env = ChessEnv()
     results = Counter()
 
-    for game in range(1, NUM_GAMES + 1):
+    print(f"Model: {player.name}")
+    print(f"Device: {player.device}")
+    print(f"Training games: {num_games}")
+    print(f"Learning rate: {LEARNING_RATE}")
+    print(f"Batch size: {BATCH_SIZE}")
+
+    # NEW: Display previous training progress
+    print(f"Previously trained games: {player.games_trained}")
+    print(f"Previous training steps: {player.training_steps}")
+
+    for game in range(1, num_games + 1):
         state = env.reset()
         losses = []
 
@@ -80,14 +91,19 @@ def main():
 
         loss_text = f"{sum(losses) / len(losses):.5f}" if losses else "warming up"
         print(
-            f"Game {game}/{NUM_GAMES} | result={result} | plies={ply} | "
+            f"Game {game}/{num_games} | "
+            f"total_games={player.games_trained} | "  # NEW
+            f"result={result} | plies={ply} | "
             f"epsilon={player.epsilon:.3f} | loss={loss_text} | "
             f"results={dict(results)}"
         )
 
-        if game % SAVE_EVERY == 0 or game == NUM_GAMES:
+        if game % SAVE_EVERY == 0 or game == num_games:
             player.save(filename)
 
+    # NEW: Display cumulative training progress
+    print(f"Total games trained: {player.games_trained}")
+    print(f"Total training steps: {player.training_steps}")
     print(f"Saved trained network to {filename}")
 
 

@@ -1,20 +1,26 @@
-from game_runner import GameRunner
 from player_random import RandomPlayer
 from player_stockfish import StockfishPlayer
-from player import SelfLearningPlayer
+from player_NNandABprune import SelfLearningPlayer, CNNQNetwork
+from game_runner import GameRunner
 
-def main(player1, player2, player1_color, record_game):
-    game = GameRunner(player1, player2, player1_color, record_game=record_game)
+def main(player1, player2, player1_color, record_game,
+         player1_depth=0, player2_depth=0):
+    game = GameRunner(
+            player1, player2, player1_color,
+            record_game=record_game,
+            player1_depth=player1_depth,
+            player2_depth=player2_depth)
     game.run_game()
-    game.print_results(with_move_history=True, with_board_history=True)
-    game.delete_game_file()
-
+    game.print_results(
+        with_move_history=False,
+        with_board_history=False
+    )
 
 if __name__ == "__main__":
-    player1 = RandomPlayer()
-    player2 = StockfishPlayer("/opt/homebrew/bin/stockfish")
+    player1 = SelfLearningPlayer(model=CNNQNetwork())
+    player1.load("cnn_c32_b3_lr0.0001_bs32.pt")
 
-    try:
-        main(player1, player2, "white", False)
-    finally:
-        player2.close()
+    player2 = RandomPlayer()
+
+    main(player1, player2, "white", True,
+         player1_depth=2)

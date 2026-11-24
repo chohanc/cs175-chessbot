@@ -1,15 +1,20 @@
 import chess
-from chess_env import ChessEnv
 import time
 import csv
 import os
+from chess_env import ChessEnv
+from player import SelfLearningPlayer
+from player_NNandABprune import SelfLearningPlayer as HybridPlayer
 
 class GameRunner:
-    def __init__(self, player1, player2, player1_color = "white", *, record_game = False):
+    def __init__(self, player1, player2, player1_color="white", *,
+                 record_game=False, player1_depth=0, player2_depth=0):
         self.env = ChessEnv()
         self.player1 = player1
         self.player2 = player2
         self.record_game = record_game
+        self.player1_depth = player1_depth
+        self.player2_depth = player2_depth
         self.white_player = None
         self.black_player = None
         self.assign_color(player1_color)
@@ -37,11 +42,10 @@ class GameRunner:
 
     def run_game(self):
         state = self.env.reset()
-        # collects all info for a single game
-        # adds initial board position
         self.game_result["board_history"].append(self.env.get_fen())
         start_time = time.time()
         done = False
+
         while not done:
             turn = self.env.get_turn()
             if turn == "white":
@@ -49,22 +53,59 @@ class GameRunner:
             else:
                 player = self.black_player
 
-            action = player.select_move(
-                state,
-                self.env.get_legal_moves()
-            )
+            legal_moves = self.env.get_legal_moves()
+            depth = self.player1_depth if player is self.player1 else self.player2_depth
+
+            move_start = time.perf_counter()
+
+            if isinstance(player, HybridPlayer):
+                action = player.select_move(
+                    state, legal_moves,
+                    training=False,
+                    search_depth=depth
+                )
+            elif isinstance(player, SelfLearningPlayer):
+                action = player.select_move(
+                    state, legal_moves,
+                    training=False
+                )
+            else:
+                action = player.select_move(state, legal_moves)
+
+            elapsed = time.perf_counter() - move_start
 
             state, _, done = self.env.step(action)
 
             self.game_result["num_plies"] += 1
-            self.game_result["move_history"].append({"player": turn,
-                                                "move": action})
+            self.game_result["move_history"].append({
+                "player": turn,
+                "move": action
+            })
             self.game_result["board_history"].append(self.env.get_fen())
-        
+
+            print(f"Ply {self.game_result['num_plies']} | "
+                  f"{turn} | {action} | {elapsed:.3f}s", flush=True)
+
         self.game_result["duration"] = time.time() - start_time
-        self.game_result["winner"]= "player 1" if (self.env.get_result() == "1-0") else "player 2"
+
+        result = self.env.get_result()
+        if result == "1-0":
+            winner = self.white_player
+        elif result == "0-1":
+            winner = self.black_player
+        else:
+            winner = None
+
+        if winner is None:
+            self.game_result["winner"] = "draw"
+        elif winner is self.player1:
+            self.game_result["winner"] = "player 1"
+        else:
+            self.game_result["winner"] = "player 2"
+
         self.game_result["termination"] = self.env.get_termination()
-        if self.record_game is True:
+
+        if self.record_game:
             self.save_game()
 
         return self.game_result

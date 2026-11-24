@@ -2,7 +2,7 @@ import csv
 from game_runner import GameRunner
 
 """
-Eval will allow for testing of multiple games of a single and and be
+Eval will allow for testing of multiple games of a single and be
 responsible for recording all of the stats (going to finish this part thursday)
 """
 

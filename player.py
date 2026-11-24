@@ -7,13 +7,10 @@ Learning: shared-network, zero-sum Q-learning, replay, target network.
 
 from collections import deque
 import random
-
 import chess
 import torch
 from torch import nn
-
 from copy import deepcopy
-
 
 NUM_NORMAL_ACTIONS = 64 * 64
 
@@ -166,6 +163,7 @@ class QNetwork(nn.Module):
     def forward(self, states):
         return self.layers(states)
 
+
 class SelfLearningPlayer:
     def __init__(self, gamma=0.99, lr=1e-4, epsilon=1.0,
                  epsilon_min=0.05, epsilon_decay=0.995,
@@ -198,6 +196,7 @@ class SelfLearningPlayer:
         self.target_update_every = target_update_every
         self.memory = deque(maxlen=memory_size)
         self.training_steps = 0
+        self.games_trained = 0
 
     def select_move(self, state, legal_moves, training=True):
         """Select a legal UCI move; exploration occurs only in training mode."""
@@ -220,7 +219,6 @@ class SelfLearningPlayer:
 
     def train_step(self):
         """Learn from one random replay batch; returns loss or None if warming up."""
-
 
         if not self.memory:
             return None
@@ -287,6 +285,7 @@ class SelfLearningPlayer:
     def finish_episode(self):
         """Reduce randomness slowly after each self-play game."""
         self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
+        self.games_trained += 1
 
     def save(self, path="chess_dqn.pt"):
         torch.save({
@@ -296,6 +295,7 @@ class SelfLearningPlayer:
             "training_steps": self.training_steps,
             "target_model": self.target_model.state_dict(),
             "replay_memory": list(self.memory),
+            "games_trained": self.games_trained,
         }, path)
 
     def load(self, path="chess_dqn.pt"):
@@ -310,3 +310,4 @@ class SelfLearningPlayer:
         self.training_steps = checkpoint["training_steps"]
         self.memory.clear()
         self.memory.extend(checkpoint.get("replay_memory", []))
+        self.games_trained = checkpoint.get("games_trained", 0)
