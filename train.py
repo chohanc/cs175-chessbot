@@ -8,7 +8,7 @@ from player import CNNQNetwork, QNetwork, SelfLearningPlayer
 
 
 NUM_GAMES = 10
-MAX_PLIES = 1000
+MAX_PLIES = 500
 SAVE_EVERY = 5
 
 CNN_CHANNELS = 32
