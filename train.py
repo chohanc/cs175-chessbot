@@ -1,64 +1,94 @@
-"""Self-play training with a shared DQN for White and Black.
+"""Train a shared DQN chess player through self-play."""
 
-Requires your existing chess_env.py implementing ChessEnv.reset(),
-get_state(), get_legal_moves(), step(), is_game_over(), get_result().
-"""
 from collections import Counter
+from pathlib import Path
 
 from chess_env import ChessEnv
-from player import SelfLearningPlayer
+from player import CNNQNetwork, QNetwork, SelfLearningPlayer
 
 
-NUM_GAMES = 10              # Quick starting run; increase for longer training.
-MAX_PLIES = 300             # Safety cap: a capped game gets 0 terminal reward.
+NUM_GAMES = 10
+MAX_PLIES = 300
 SAVE_EVERY = 5
+
+CNN_CHANNELS = 32
+CNN_BLOCKS = 3
+LEARNING_RATE = 1e-4
+BATCH_SIZE = 32
 
 
 def main():
+    choice = input("Choose a model [cnn/mlp, default: cnn]: ").strip().lower()
+
+    if choice in ("", "cnn"):
+        model = CNNQNetwork(channels=CNN_CHANNELS, num_blocks=CNN_BLOCKS)
+        model_name = f"cnn_c{CNN_CHANNELS}_b{CNN_BLOCKS}"
+    elif choice == "mlp":
+        model = QNetwork()
+        model_name = "mlp"
+    else:
+        print("Please enter 'cnn' or 'mlp'.")
+        return
+
+    default_name = f"{model_name}_lr{LEARNING_RATE}_bs{BATCH_SIZE}.pt"
+    name = input(f"Checkpoint filename [default: {default_name}]: ").strip()
+    filename = Path(name or default_name)
+
+    player = SelfLearningPlayer(
+        model=model,
+        lr=LEARNING_RATE,
+        batch_size=BATCH_SIZE,
+    )
+
+    if filename.is_file() and filename.stat().st_size > 0:
+        player.load(filename)
+        # Use the learning rate selected above when continuing training.
+        player.optimizer.param_groups[0]["lr"] = LEARNING_RATE
+        print(f"Resuming training from {filename}")
+    else:
+        print(f"Starting a new training run. Checkpoint: {filename}")
+
     env = ChessEnv()
-    player = SelfLearningPlayer()
     results = Counter()
 
     for game in range(1, NUM_GAMES + 1):
         state = env.reset()
-        recent_losses = []
-        result = "capped"
+        losses = []
 
-        for ply in range(MAX_PLIES):
+        for ply in range(1, MAX_PLIES + 1):
             legal_moves = env.get_legal_moves()
             action = player.select_move(state, legal_moves, training=True)
             next_state, reward, done = env.step(action)
 
-            # End exceptionally long games for training; treat cap as a draw.
-            capped = (ply + 1 == MAX_PLIES) and not done
-            player.remember(state, action, reward if not capped else 0.0,
-                            next_state, done or capped)
+            capped = ply == MAX_PLIES and not done
+            if capped:
+                reward = 0.0
+
+            player.remember(state, action, reward, next_state, done or capped)
             loss = player.train_step()
             if loss is not None:
-                recent_losses.append(loss)
-            state = next_state
+                losses.append(loss)
 
-            if done:
-                result = env.get_result()
+            if done or capped:
+                result = env.get_result() if done else "capped"
                 break
-            if capped:
-                break
+
+            state = next_state
 
         player.finish_episode()
         results[result] += 1
 
-        if game % 10 == 0:
-            mean_loss = sum(recent_losses) / len(recent_losses) if recent_losses else None
-            loss_display = f"{mean_loss:.5f}" if mean_loss is not None else "warming up"
-            print(f"Game {game}/{NUM_GAMES} | last={result} | "
-                  f"epsilon={player.epsilon:.3f} | loss={loss_display} | "
-                  f"results={dict(results)}")
+        loss_text = f"{sum(losses) / len(losses):.5f}" if losses else "warming up"
+        print(
+            f"Game {game}/{NUM_GAMES} | result={result} | plies={ply} | "
+            f"epsilon={player.epsilon:.3f} | loss={loss_text} | "
+            f"results={dict(results)}"
+        )
 
-        if game % SAVE_EVERY == 0:
-            player.save("chess_dqn.pt")
+        if game % SAVE_EVERY == 0 or game == NUM_GAMES:
+            player.save(filename)
 
-    player.save("chess_dqn.pt")
-    print("Saved trained network to chess_dqn.pt")
+    print(f"Saved trained network to {filename}")
 
 
 if __name__ == "__main__":

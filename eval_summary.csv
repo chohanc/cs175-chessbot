@@ -1,0 +1,2 @@
+bot,opponent,games,wins,draws,losses,win_rate_pct,avg_game_seconds,avg_plies
+SelfLearningPlayer,stockfish,10,0,0,10,0.0,1.75,34.7
